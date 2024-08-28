@@ -1,0 +1,348 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General styles */
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Background color not white */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container styles */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header styles */
+header {
+    background-color: #008080; /* Example background color */
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    position: relative; /* Ensure that children are positioned relative to the header */
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+/* Add this CSS to move the nav menu to the right */
+nav {
+    margin-left: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.toggle-btn {
+    display: none;
+    background-color: #fff;
+    color: #007BFF;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's above other elements */
+    position: absolute; /* Position it within the header */
+    top: 50%;
+    right: 10px; /* Align it to the right side */
+    transform: translateY(-50%); /* Center it vertically */
+}
+
+/* Banner styles */
+.banner img,
+.about-banner img {
+    width: 100%;
+    height: auto; /* Adjust height to maintain aspect ratio */
+}
+
+/* Shop Items */
+.shop-items .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.shop-items .item {
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.shop-items .item img {
+    width: 100%;
+    height: auto;
+}
+
+/* About Page */
+.mission-goal-values {
+    background-color: #e9ecef; /* Background color for the section */
+    padding: 20px 0;
+}
+
+.mission-goal-values .container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.mission-goal-values .mission, .mission-goal-values .goal, .mission-goal-values .values {
+    flex: 1 1 30%;
+}
+
+/* Make Mission, Goal, and Values section responsive */
+@media (max-width: 768px) {
+    .mission-goal-values .container {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    .mission-goal-values .mission, .mission-goal-values .goal, .mission-goal-values .values {
+        flex: 1 1 100%; /* Full width for each section */
+        margin-bottom: 20px; /* Add space between sections */
+    }
+}
+
+/* Team Section */
+.team {
+    padding: 20px 0;
+}
+
+.team .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.team .team-member {
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.team .team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/* Services Page */
+.services {
+    padding: 20px 0;
+}
+
+.services .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.services .service {
+    flex: 1 1 calc(50% - 20px);
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.services .service img {
+    width: 100%;
+    height: auto;
+}
+
+.service:hover {
+    background-color: navy;
+    color: #fff;
+}
+
+/* Gallery Page */
+.gallery {
+    padding: 20px 0;
+}
+
+.gallery .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gallery .gallery-item {
+    flex: 1 1 calc(33.333% - 10px);
+}
+
+.gallery .gallery-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.gallery .gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery:hover {
+    background-color: green;
+    color: #fff;
+}
+
+/* Contact Page */
+.contact {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.contact .contact-details {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.contact .contact-form {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-top: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.contact-form button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: green;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333333; /* Example background color */
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: auto; /* Ensures footer sticks to the bottom */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #007BFF;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        z-index: 999; /* Ensure it’s below the toggle button */
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .toggle-btn {
+        display: block;
+        background-color: goldenrod;
+        color: #8400ff;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        z-index: 1000; /* Ensure it's above other elements */
+        position: absolute; /* Position it within the header */
+        top: 50%;
+        right: 10px; /* Align it to the right side */
+        transform: translateY(-50%); /* Center it vertically */
+    }
+
+    .contact {
+        flex-direction: column;
+    }
+
+    .contact .contact-details,
+    .contact .contact-form {
+        padding: 0;
+    }
+
+    .shop-items .container {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .shop-items .item {
+        flex: 1 1 100%; /* Full width for each item */
+    }
+}
+
+/* SEO Optimization */
+h1, h2, h3, p {
+    margin-bottom: 10px;
+}
+
+.banner {
+    background-color: indigo; /* Background color */
+    color: #FFFFFF; /* Text color */
+    padding: 20px 0; /* Padding for spacing */
+    text-align: center; /* Center the text */
+}
+
+.banner h1 {
+    font-size: 2.5em; /* Font size */
+    margin: 0; /* Remove default margin */
+}
+
+.cta-container {
+    text-align: center;
+    margin: 20px 0; 
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #008cba;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 10px;
+}
+
+.cta-button:hover {
+    background-color: #005f5f;
+    transform: scale(1.05);
+}
