@@ -76,7 +76,7 @@ nav ul li a {
 .banner img,
 .about-banner img {
     width: 100%;
-    height: auto; /* Adjust height to maintain aspect ratio */
+    height: 200; /* Adjust height to maintain aspect ratio */
 }
 
 /* Shop Items */
